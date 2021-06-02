@@ -42,7 +42,7 @@
          <div class="twelve columns">
 
             <div class="logo">
-               <a href="index.html"><img alt="" src="images/logo.png"></a>
+               <a href="/index"><img alt="" src="images/logo.png"></a>
             </div>
 
             <nav id="nav-wrap">
@@ -52,18 +52,18 @@
 
                <ul id="nav" class="nav">
 
-	               <li class="current"><a href="index.html">Home</a></li>
-	               <li><span><a href="/Allblogs">Blog</a></span>
+	               <li class="current"><a href="/index">Home</a></li>
+	               <li><span><a href="/AllblogsAuth">Blog</a></span>
                      <ul>
                         <li><a href="/Blog">My Blogs</a></li>
-                        <li><a href="/Allblogs">View Blogs</a></li>
+                        <li><a href="/AllblogsAuth">View Blogs</a></li>
                         <li><a href="/CreateBlog">Create Blog</a></li>
                      </ul>
                   </li>
-                  <li><span><a href="/Allquestions">QnA</a></span>
+                  <li><span><a href="/AllquestionsAuth">QnA</a></span>
                      <ul>
-                        <li><a href="/Allquestions">View QnAs</a></li>
                         <li><a href="/Question">My QnAs</a></li>
+                        <li><a href="/AllquestionsAuth">View QnAs</a></li>
                         <li><a href="/CreateQuestion">Ask Questions</a></li>
                      </ul>
                   </li>
@@ -79,10 +79,14 @@
                         <li><a href="blog.html">Category 8</a></li>
                      </ul>
                   </li>
-	               <li><a href="about.html">About</a></li>
-                  <li><a href="contact.html">Contact</a></li>
-                  <li><a href="contact.html">My Account</a></li>
-
+	               <li><a href="/aboutAuth">About</a></li>
+                  <li><a href="/contactAuth">Contact</a></li>
+                  <li><span><a href="/MyDashboard">My Account</a></span>
+                  <ul>
+                        <li><a href="/MyDashboard">My Dashboard</a></li>
+                        <li><a href="/">Sign Out</a></li>
+                     </ul>
+                  </li>
                </ul> <!-- end #nav -->
 
             </nav> <!-- end #nav-wrap -->
@@ -338,17 +342,17 @@
             <div class="entry-header">
 
                <div class="permalink">
-                  <a href="single.html"><i class="fa fa-link"></i></a>
+                  <a href="/ShowBlog{{$row['id']}}"><i class="fa fa-link"></i></a>
                </div>
 
                <div class="ten columns entry-title pull-right">
-                  <h3><a href="single.html">{{$row['title']}}</a></h3>
+                  <h3><a href="/ShowBlog{{$row['id']}}">{{$row['title']}}</a></h3>
                </div>
 
                <div class="two columns post-meta end">
                   <p>
                   <time datetime="2014-01-31" class="post-date" pubdate="">{{$row['created_at']}}</time>
-                  <span class="dauthor">By {{$row['name']}}</span>
+                  <span class="dauthor"><a href="/BProfile{{$row['id']}}">By {{$row['name']}}</a></span>
                   </p>
                </div>
 
@@ -356,7 +360,7 @@
 
             <div class="ten columns offset-2 post-content">
                <p>{{$row['intro']}}.
-               <a class="more-link" href="single.html">Read More<i class="fa fa-arrow-circle-o-right"></i></a></p>
+               <a class="more-link" href="/ShowBlog{{$row['id']}}">Read More<i class="fa fa-arrow-circle-o-right"></i></a></p>
             </div>
 
          </article> <!-- Entry End -->

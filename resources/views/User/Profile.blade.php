@@ -7,7 +7,7 @@
    <!--- Basic Page Needs
    ================================================== -->
    <meta charset="utf-8">
-	<title>Blog Post | Sparrow</title>
+	<title>Blog | Sparrow</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 
@@ -29,6 +29,7 @@
 	================================================== -->
 	<link rel="shortcut icon" href="favicon.ico" >
 
+
     <!-- CSS
     ================================================== -->
     <link rel="stylesheet" href="css/base.css">
@@ -42,7 +43,6 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="http://cdn.ckeditor.com/4.6.2/standard-all/ckeditor.js"></script>
-
 
 </head>
 
@@ -130,178 +130,107 @@
 
    </div> <!-- Page Title End-->
 
-   <!-- Content
+    <!-- s-content
+    ================================================== -->
+    <section class="s-content s-content--narrow s-content--no-padding-bottom">
+
+        <article class="row format-standard">
+
+            <div class="s-content__header col-full">
+                <h1 class="s-content__header-title">
+                {{$response['user']['name']}}'s Dashboard
+                </h1>
+
+            </div> <!-- end s-content__header -->
+    
+            <div class="s-content__media col-four">
+                <div class="s-content__post-thumb">
+                    <img src="{{Storage::disk('s3')->url($response['user']['img'])}}"
+                         sizes="(max-width: 2000px) 100vw, 2000px" alt="" >
+                </div>
+                <h3>{{$response['user']['name']}}</h3>
+                <p>
+                {{$response['user']['description']}}
+                </p>
+
+            </div> <!-- end s-content__media -->
+
+            <div class="col-eight s-content__maine">
+
+                <h3>My Blogs</h3>
+    
+                @foreach ($response['blogs'] as $row)
+                <div >
+                    <article class="col-block popular__post">
+ 
+                        <h5><a href="/ShowBlog{{$row['id']}}">{{$row['title']}}</a></h5>
+                        <section class="popular__meta">
+                                <span class="popular__author"><span>By</span> <a href="/BProfile{{$row['id']}}">{{$response['user']['name']}}</a></span>
+                            <span class="popular__date"><span>on</span> <time datetime="2017-12-19">{{$row['created_at']}}</time></span>
+                            <div class="entry__meta">
+                        <span class="entry__meta-links">
+                            <a href="category.html">{{$row['category']}}</a></span>
+
+                    </div>
+                        </section>
+                    </article>
+                </div> <!-- end s-content__main -->
+                @endforeach
+
+                
+                <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+                
+                <h3>My Questions</h3>
+    
+                @foreach ($response['questions'] as $row) 
+                <div >
+                    <article class="col-block popular__post">
+ 
+                        <h5><a href="/ShowQuestion{{$row['id']}}">{{$row['title']}}</a></h5>
+                        <section class="popular__meta">
+                                <span class="popular__author"><span>By</span> <a href="/QProfile{{$row['id']}}">{{$response['user']['name']}}</a></span>
+                            <span class="popular__date"><span>on</span> <time datetime="2017-12-19">{{$row['created_at']}}</time></span>
+                            <div class="entry__meta">
+                        <span class="entry__meta-links">
+                            <a href="category.html">{{$row['category']}}</a></span>
+                        
+                    </div>
+                        </section>
+                    </article>
+                </div> <!-- end s-content__main -->
+                @endforeach
+
+        </article>
+
+
+      
+
+        
+    </section> <!-- s-content -->
+
+<!-- Call-To-Action Section
    ================================================== -->
-   <div class="content-outer">
+   <section id="call-to-action">
 
-      <div id="page-content" class="row">
+      <div class="row">
 
-         <div id="primary" class="eight columns">
+         <div class="eight columns offset-1">
 
-            <article class="post">
+            <h1><a href="blog-single.html">Voluptate Velit Esse</a><a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">.</a></h1>
+            <p>Ducimus qui blanditiis praesentium voluptatum
+            deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate<!-- Simply type	the promocode in the box labeled “Promo Code” when placing your order. -->. </p>
 
-               <div class="entry-header cf">
+         </div>
 
-                  <h1>{{$response['question']['title']}}</h1>
+         <div class="three columns action">
 
-                  <p class="post-meta">
-
-                     <time class="date" datetime="2014-01-14T11:24">{{$response['question']['created_at']}}</time>
-                     /
-                     <span class="categories">
-                     <a href="#">{{$response['question']['category']}}</a> /
-                     </span>
-
-                  </p>
-
-               </div>
-
-               <div class="post-content">
-
-                  <p><?php echo $response['question']['description'] ?></p>
-
-
-                  <div class="bio cf">
-
-                     <div class="gravatar">
-                        <img src="{{Storage::disk('s3')->url($response['user']['img'])}}" alt="">
-                     </div>
-                     <div class="about">
-                        <h5><a title="Posts by /QProfile{{$response['question']['id']}}" href="#" rel="author">Post By:{{$response['user']['name']}}</a></h5>
-                        <p>{{$response['user']['description']}}</p>
-                     </div>
-
-                  </div>
-
-
-               </div>
-
-            </article> <!-- post end -->
-
-            <!-- Comments
-            ================================================== -->
-            <div id="comments">
-
-               <h3>Answers</h3>
-
-               <!-- commentlist -->
-               <ol class="commentlist">
-
-               @foreach ($response['my_answer'] as $row)
-                  <li class="depth-1">
-
-                     <div class="avatar">
-                        <img width="50" height="50" class="avatar" src="{{Storage::disk('s3')->url($row['img'])}}" alt="">
-                     </div>
-
-                     <div class="comment-info">
-                        <cite>{{$row['name']}}</cite>
-
-                        <div class="comment-meta">
-                           <time class="comment-time" datetime="2014-01-14T23:05">{{$row['created_at']}}</time>
-                        </div>
-                     </div>
-
-                     <div class="comment-text">
-                        <p><?php echo $row['answer'] ?></p>
-                     </div>
-
-                  </li>
-                  @endforeach
-               </ol> <!-- Commentlist End -->
-
-               <!-- commentlist -->
-               <ol class="commentlist">
-
-               @foreach ($response['others_answer'] as $row)
-                  <li class="depth-1">
-
-                     <div class="avatar">
-                        <img width="50" height="50" class="avatar" src="{{Storage::disk('s3')->url($row['img'])}}" alt="">
-                     </div>
-
-                     <div class="comment-info">
-                        <cite>{{$row['name']}}</cite>
-
-                        <div class="comment-meta">
-                           <time class="comment-time" datetime="2014-01-14T23:05">{{$row['created_at']}}</time>
-                        </div>
-                     </div>
-
-                     <div class="comment-text">
-                        <p><?php echo $row['answer'] ?></p>
-                     </div>
-
-                  </li>
-                  @endforeach
-               </ol> <!-- Commentlist End -->
-               <div class="respond">
-
-                <h3 class="h2">Add Answer</h3>
-
-                <form name="contactForm" id="contactForm" method="post" action="/AddAnswer">
-                    <fieldset>
-                    <input type="hidden" name="id" value="{{$response['question']['id']}}">
-                        <div class="message form-field">
-                        <textarea name="content" id="content" class="form-control ckeditor"></textarea>
-                        </div>
-
-                        <button type="submit" class="submit btn--primary btn--large full-width">Submit</button>
-
-                    </fieldset>
-                </form> <!-- end form -->
-
-                </div> <!-- end respond -->
-
-            </div>  <!-- Comments End -->
             
 
          </div>
 
-         <div id="secondary" class="four columns end">
-
-            <aside id="sidebar">
-
-               <div class="widget widget_search">
-                  <h5>Search</h5>
-                  <form action="#">
-
-                     <input class="text-search" type="text" onfocus="if (this.value == 'Search here...') { this.value = ''; }" onblur="if(this.value == '') { this.value = 'Search here...'; }" value="Search here...">
-                     <input type="submit" class="submit-search" value="">
-
-                  </form>
-               </div>
-
-               <div class="widget widget_text">
-                  <h5 class="widget-title">Text Widget</h5>
-                  <div class="textwidget">Proin gravida nibh vel velit auctor aliquet.
-                  Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum,
-                  nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus
-                  a sit amet mauris. Morbi accumsan ipsum velit. </div>
-		         </div>
-
-               <div class="widget widget_categories">
-                  <h5 class="widget-title">Categories</h5>
-                  <ul class="link-list cf">
-                     <li><a href="#">Designs</a></li>
-                     <li><a href="#">Internet</a></li>
-                     <li><a href="#">Typography</a></li>
-                     <li><a href="#">Photography</a></li>
-                     <li><a href="#">Web Development</a></li>
-                     <li><a href="#">Projects</a></li>
-                     <li><a href="#">Other Stuff</a></li>
-                  </ul>
-               </div>
-
-
-            </aside> <!-- Sidebar End -->
-
-         </div> <!-- Comments End -->
-
       </div>
 
-   </div> <!-- Content End-->
-
+   </section> <!-- Call-To-Action Section End-->
    <!-- Tweets Section
    ================================================== -->
    <section id="tweets">
@@ -337,7 +266,7 @@
 
       </div>
 
-   </section> <!-- Tweet Section End-->
+   </section> <!-- Tweets Section End-->
 
    <!-- footer
    ================================================== -->
@@ -347,10 +276,10 @@
 
          <div class="twelve columns">
 
-            <ul class="footer-nav">
-					<li><a href="index.html">Home.</a></li>
+             <ul class="footer-nav">
+					<li><a href="/index">Home.</a></li>
               	<li><a href="blog.html">Blog.</a></li>
-              	<li><a href="portfolio-index.html">Portfolio.</a></li>
+              	<li><a href="portfolio-/index">Portfolio.</a></li>
               	<li><a href="about.html">About.</a></li>
               	<li><a href="contact.html">Contact.</a></li>
                <li><a href="styles.html">Features.</a></li>
@@ -387,21 +316,6 @@
    <script src="js/jquery.flexslider.js"></script>
    <script src="js/doubletaptogo.js"></script>
    <script src="js/init.js"></script>
-
-   <!-- Java Script
-    ================================================== -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
-    <script src="js/main.js"></script>
-
 </body>
 
 </html>
-
-<script>
- CKEDITOR.replace( 'content', {
-  height: 300,
-  filebrowserUploadUrl: "/Qimg"
- });
-</script>

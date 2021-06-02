@@ -7,7 +7,7 @@
    <!--- Basic Page Needs
    ================================================== -->
    <meta charset="utf-8">
-	<title>Blog Post | Sparrow</title>
+	<title>Blog | Sparrow</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 
@@ -37,45 +37,64 @@
    ================================================== -->
    <header>
 
-      <div class="row">
+   <div class="row">
 
-         <div class="twelve columns">
+<div class="twelve columns">
 
-            <div class="logo">
-               <a href="index.html"><img alt="" src="images/logo.png"></a>
-            </div>
+   <div class="logo">
+      <a href="/index"><img alt="" src="images/logo.png"></a>
+   </div>
 
-            <nav id="nav-wrap">
+   <nav id="nav-wrap">
 
-               <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
-	            <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+      <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
 
-               <ul id="nav" class="nav">
+      <ul id="nav" class="nav">
 
-	               <li><a href="index.html">Home</a></li>
-	               <li class="current"><span><a href="blog.html">Blog</a></span>
-                     <ul>
-                        <li><a href="blog.html">Blog Index</a></li>
-                        <li><a href="single.html">Post</a></li>
+         <li class="current"><a href="/index">Home</a></li>
+         <li><span><a href="/AllblogsAuth">Blog</a></span>
+            <ul>
+               <li><a href="/Blog">My Blogs</a></li>
+               <li><a href="/AllblogsAuth">View Blogs</a></li>
+               <li><a href="/CreateBlog">Create Blog</a></li>
+            </ul>
+         </li>
+         <li><span><a href="/AllquestionsAuth">QnA</a></span>
+            <ul>
+               <li><a href="/Question">My QnAs</a></li>
+               <li><a href="/AllquestionsAuth">View QnAs</a></li>
+               <li><a href="/CreateQuestion">Ask Questions</a></li>
+            </ul>
+         </li>
+         <li><span><a href="/categories">Categories</a></span>
+         <ul>
+               <li><a href="blog.html">Category 1</a></li>
+               <li><a href="blog.html">Category 2</a></li>
+               <li><a href="blog.html">Category 3</a></li>
+               <li><a href="blog.html">Category 4</a></li>
+               <li><a href="blog.html">Category 5</a></li>
+               <li><a href="blog.html">Category 6</a></li>
+               <li><a href="blog.html">Category 7</a></li>
+               <li><a href="blog.html">Category 8</a></li>
+            </ul>
+         </li>
+         <li><a href="/aboutAuth">About</a></li>
+         <li><a href="/contactAuth">Contact</a></li>
+         <li><span><a href="/MyDashboard">My Account</a></span>
+                  <ul>
+                        <li><a href="/MyDashboard">My Dashboard</a></li>
+                        <li><a href="/">Sign Out</a></li>
                      </ul>
                   </li>
-                  <li><span><a href="portfolio-index.html">Portfolio</a></span>
-                     <ul>
-                        <li><a href="portfolio-index.html">Portfolio Index</a></li>
-                        <li><a href="portfolio.html">Portfolio Entry</a></li>
-                     </ul>
-                  </li>
-	               <li><a href="about.html">About</a></li>
-                  <li><a href="contact.html">Contact</a></li>
-                  <li><a href="styles.html">Features</a></li>
 
-               </ul> <!-- end #nav -->
+      </ul> <!-- end #nav -->
 
-            </nav> <!-- end #nav-wrap -->
+   </nav> <!-- end #nav-wrap -->
 
-         </div>
+</div>
 
-      </div>
+</div>
 
    </header> <!-- Header End -->
 
@@ -104,83 +123,57 @@
 
          <div id="primary" class="eight columns">
 
+         @foreach ($response['blogs'] as $row)
             <article class="post">
 
                <div class="entry-header cf">
 
-                  <h1>{{$response['question']['title']}}</h1>
+                  <h1><a href="/ShowBlog{{$row['id']}}" title="">{{$row['title']}}</a></h1>
 
                   <p class="post-meta">
 
-                     <time class="date" datetime="2014-01-14T11:24">{{$response['question']['created_at']}}</time>
+                     <time class="date" datetime="2014-01-14T11:24">{{$row['created_at']}}</time>
                      /
                      <span class="categories">
-                     <a href="#">{{$response['question']['category']}}</a> /
+                     <a href="/BProfile{{$row['id']}}">By {{$row['name']}}</a> /
+                     <a href="#">{{$row['category']}}</a> /
                      </span>
 
                   </p>
 
                </div>
 
+               <div class="post-thumb">
+                  <a href="/ShowBlog{{$row['id']}}" title=""><img src="{{Storage::disk('s3')->url($row['img'])}}" alt="post-image" title="post-image"></a>
+               </div>
+
                <div class="post-content">
 
-                  <p><?php echo $response['question']['description'] ?></p>
-
-
-                  <div class="bio cf">
-
-                     <div class="gravatar">
-                        <img src="{{Storage::disk('s3')->url($response['user']['img'])}}" alt="">
-                     </div>
-                     <div class="about">
-                        <h5><a title="Posts by {{$response['user']['name']}}" href="#" rel="author">Post By:{{$response['user']['name']}}</a></h5>
-                        <p>{{$response['user']['description']}}</p>
-                     </div>
-
-                  </div>
-
+                  <p>{{$row['intro']}}</p>
 
                </div>
 
             </article> <!-- post end -->
+            @endforeach
 
-            <!-- Comments
-            ================================================== -->
-            <div id="comments">
+            <!-- Pagination -->
+            <nav class="col full pagination">
+  			      <ul>
+                  <li><span class="page-numbers prev inactive">Prev</span></li>
+  				      <li><span class="page-numbers current">1</span></li>
+  				      <li><a href="#" class="page-numbers">2</a></li>
+                  <li><a href="#" class="page-numbers">3</a></li>
+                  <li><a href="#" class="page-numbers">4</a></li>
+                  <li><a href="#" class="page-numbers">5</a></li>
+                  <li><a href="#" class="page-numbers">6</a></li>
+                  <li><a href="#" class="page-numbers">7</a></li>
+                  <li><a href="#" class="page-numbers">8</a></li>
+                  <li><a href="#" class="page-numbers">9</a></li>
+  				      <li><a href="#" class="page-numbers next">Next</a></li>
+  			      </ul>
+  		      </nav>
 
-               <h3>Answers</h3>
-
-               <!-- commentlist -->
-               <ol class="commentlist">
-
-               @foreach ($response['answers'] as $row)
-                  <li class="depth-1">
-
-                     <div class="avatar">
-                        <img width="50" height="50" class="avatar" src="{{Storage::disk('s3')->url($row['img'])}}" alt="">
-                     </div>
-
-                     <div class="comment-info">
-                        <cite>{{$row['name']}}</cite>
-
-                        <div class="comment-meta">
-                           <time class="comment-time" datetime="2014-01-14T23:05">{{$row['created_at']}}</time>
-                        </div>
-                     </div>
-
-                     <div class="comment-text">
-                        <p><?php echo $row['answer'] ?></p>
-                     </div>
-
-                  </li>
-                  @endforeach
-               </ol> <!-- Commentlist End -->
-
-
-            </div>  <!-- Comments End -->
-            
-
-         </div>
+         </div> <!-- Primary End-->
 
          <div id="secondary" class="four columns end">
 
@@ -218,9 +211,9 @@
                </div>
 
 
-            </aside> <!-- Sidebar End -->
+            </aside>
 
-         </div> <!-- Comments End -->
+         </div> <!-- Secondary End-->
 
       </div>
 
@@ -261,7 +254,7 @@
 
       </div>
 
-   </section> <!-- Tweet Section End-->
+   </section> <!-- Tweets Section End-->
 
    <!-- footer
    ================================================== -->
@@ -271,10 +264,10 @@
 
          <div class="twelve columns">
 
-            <ul class="footer-nav">
-					<li><a href="index.html">Home.</a></li>
+             <ul class="footer-nav">
+					<li><a href="/index">Home.</a></li>
               	<li><a href="blog.html">Blog.</a></li>
-              	<li><a href="portfolio-index.html">Portfolio.</a></li>
+              	<li><a href="portfolio-/index">Portfolio.</a></li>
               	<li><a href="about.html">About.</a></li>
               	<li><a href="contact.html">Contact.</a></li>
                <li><a href="styles.html">Features.</a></li>

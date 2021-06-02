@@ -25,6 +25,24 @@ Route::get('/categories', function () {
     return view('categories');
 });
 
+Route::get('/category{name}', 'RoutesController@category');
+
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+Route::get('/aboutAuth', function () {
+    return view('aboutAuth');
+});
+
+Route::get('/contactAuth', function () {
+    return view('contactAuth');
+});
+
 Route::get('/Allblogs', 'RoutesController@allblogs');
 
 Route::get('/Allquestions', 'RoutesController@allquestions');
@@ -32,6 +50,10 @@ Route::get('/Allquestions', 'RoutesController@allquestions');
 Route::get('/ShowBlogGuest{id}', 'RoutesController@blogshowguest');
 
 Route::get('/ShowQuestionGuest{id}', 'RoutesController@questionshowguest');
+
+Route::get('/AllblogsAuth', 'RoutesController@allblogsAuth');
+
+Route::get('/AllquestionsAuth', 'RoutesController@allquestionsAuth');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -120,3 +142,15 @@ Route::get('/MyDashboard', 'RoutesController@mydashboard');
 Route::get('/EditUser', 'RoutesController@edituser');
 
 Route::post('/UpdateUser', 'RoutesController@userupdate');
+
+Route::get('/Profile{id}', 'RoutesController@profile');
+
+// Route::get('/Profile1{name}', 'RoutesController@profile1');
+
+Route::get('/BProfile{id}', 'RoutesController@bprofile');
+
+Route::get('/CProfile{id}', 'RoutesController@cprofile');
+
+Route::get('/AProfile{id}', 'RoutesController@aprofile');
+
+Route::get('/QProfile{id}', 'RoutesController@qprofile');

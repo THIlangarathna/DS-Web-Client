@@ -7,7 +7,7 @@
    <!--- Basic Page Needs
    ================================================== -->
    <meta charset="utf-8">
-	<title>Blog Post | Sparrow</title>
+	<title>Blog | Sparrow</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 
@@ -42,7 +42,7 @@
          <div class="twelve columns">
 
             <div class="logo">
-               <a href="index.html"><img alt="" src="images/logo.png"></a>
+               <a href="/"><img alt="" src="images/logo.png"></a>
             </div>
 
             <nav id="nav-wrap">
@@ -52,22 +52,35 @@
 
                <ul id="nav" class="nav">
 
-	               <li><a href="index.html">Home</a></li>
-	               <li class="current"><span><a href="blog.html">Blog</a></span>
+	               <li class="current"><a href="/">Home</a></li>
+	               <li><span><a href="/Allblogs">Blog</a></span>
                      <ul>
-                        <li><a href="blog.html">Blog Index</a></li>
-                        <li><a href="single.html">Post</a></li>
+                        <li><a href="/Allblogs">View Blogs</a></li>
+                        <li><a href="apilogin">Create Blog</a></li>
                      </ul>
                   </li>
-                  <li><span><a href="portfolio-index.html">Portfolio</a></span>
+                  <li><span><a href="/Allquestions">QnA</a></span>
                      <ul>
-                        <li><a href="portfolio-index.html">Portfolio Index</a></li>
-                        <li><a href="portfolio.html">Portfolio Entry</a></li>
+                        <li><a href="/Allquestions">View QnAs</a></li>
+                        <li><a href="apilogin">Ask Questions</a></li>
                      </ul>
                   </li>
-	               <li><a href="about.html">About</a></li>
-                  <li><a href="contact.html">Contact</a></li>
-                  <li><a href="styles.html">Features</a></li>
+                  <li><span><a href="/categories">Categories</a></span>
+                  <ul>
+                        <li><a href="blog.html">Category 1</a></li>
+                        <li><a href="blog.html">Category 2</a></li>
+                        <li><a href="blog.html">Category 3</a></li>
+                        <li><a href="blog.html">Category 4</a></li>
+                        <li><a href="blog.html">Category 5</a></li>
+                        <li><a href="blog.html">Category 6</a></li>
+                        <li><a href="blog.html">Category 7</a></li>
+                        <li><a href="blog.html">Category 8</a></li>
+                     </ul>
+                  </li>
+	               <li><a href="/about">About</a></li>
+                  <li><a href="/contact">Contact</a></li>
+                  <li><a href="apilogin">Log In</a></li>
+                  <li><a href="apiregister">Sign Up</a></li>
 
                </ul> <!-- end #nav -->
 
@@ -104,18 +117,20 @@
 
          <div id="primary" class="eight columns">
 
+         @foreach ($response['blogs'] as $row)
             <article class="post">
 
                <div class="entry-header cf">
 
-                  <h1>{{$response['blog']['title']}}</h1>
+                  <h1><a href="/ShowBlogGuest{{$row['id']}}" title="">{{$row['title']}}</a></h1>
 
                   <p class="post-meta">
 
-                     <time class="date" datetime="2014-01-14T11:24">{{$response['blog']['created_at']}}</time>
+                     <time class="date" datetime="2014-01-14T11:24">{{$row['created_at']}}</time>
                      /
                      <span class="categories">
-                     <a href="#">{{$response['blog']['category']}}</a> /
+                     <a href="#">By {{$row['name']}}</a> /
+                     <a href="#">{{$row['category']}}</a> /
                      </span>
 
                   </p>
@@ -123,114 +138,36 @@
                </div>
 
                <div class="post-thumb">
-                  <img src="{{Storage::disk('s3')->url($response['blog']['img'])}}" alt="post-image" title="post-image">
+                  <a href="/ShowBlogGuest{{$row['id']}}" title=""><img src="{{Storage::disk('s3')->url($row['img'])}}" alt="post-image" title="post-image"></a>
                </div>
 
                <div class="post-content">
 
-                  <p class="lead">{{$response['blog']['intro']}}</p>
-
-                  <p><?php echo $response['blog']['content'] ?></p>
-
-
-                  <div class="bio cf">
-
-                     <div class="gravatar">
-                        <img src="{{Storage::disk('s3')->url($response['user']['img'])}}" alt="">
-                     </div>
-                     <div class="about">
-                        <h5><a title="Posts by {{$response['user']['name']}}" href="#" rel="author">Post By:{{$response['user']['name']}}</a></h5>
-                        <p>{{$response['user']['description']}}</p>
-                     </div>
-
-                  </div>
-
+                  <p>{{$row['intro']}}</p>
 
                </div>
 
             </article> <!-- post end -->
+            @endforeach
 
-            <!-- Comments
-            ================================================== -->
-            <div id="comments">
+            <!-- Pagination -->
+            <nav class="col full pagination">
+  			      <ul>
+                  <li><span class="page-numbers prev inactive">Prev</span></li>
+  				      <li><span class="page-numbers current">1</span></li>
+  				      <li><a href="#" class="page-numbers">2</a></li>
+                  <li><a href="#" class="page-numbers">3</a></li>
+                  <li><a href="#" class="page-numbers">4</a></li>
+                  <li><a href="#" class="page-numbers">5</a></li>
+                  <li><a href="#" class="page-numbers">6</a></li>
+                  <li><a href="#" class="page-numbers">7</a></li>
+                  <li><a href="#" class="page-numbers">8</a></li>
+                  <li><a href="#" class="page-numbers">9</a></li>
+  				      <li><a href="#" class="page-numbers next">Next</a></li>
+  			      </ul>
+  		      </nav>
 
-               <h3>Comments</h3>
-
-               <!-- commentlist -->
-               <ol class="commentlist">
-
-               @foreach ($response['my_comments'] as $row)
-                  <li class="depth-1">
-
-                     <div class="avatar">
-                        <img width="50" height="50" class="avatar" src="{{Storage::disk('s3')->url($row['img'])}}" alt="">
-                     </div>
-
-                     <div class="comment-info">
-                        <cite>{{$row['name']}}</cite>
-
-                        <div class="comment-meta">
-                           <time class="comment-time" datetime="2014-01-14T23:05">{{$row['created_at']}}</time>
-                        </div>
-                     </div>
-
-                     <div class="comment-text">
-                        <p>{{$row['comment']}}</p>
-                     </div>
-                     <a href="/Comment{{$row['id']}}" style="float: right;"><i class="fa fa-edit"></i>Edit</a><br>
-                        <a href="/DeleteComment{{$row['id']}}" style="float: right;"><i class="fa fa-trash"></i>Delete</a>
-                  </li>
-                  @endforeach
-               </ol> <!-- Commentlist End -->
-
-               <ol class="commentlist">
-
-                @foreach ($response['others_comments'] as $row)
-                <li class="depth-1">
-
-                    <div class="avatar">
-                        <img width="50" height="50" class="avatar" src="{{Storage::disk('s3')->url($row['img'])}}" alt="">
-                    </div>
-
-                    <div class="comment-info">
-                        <cite>{{$row['name']}}</cite>
-
-                        <div class="comment-meta">
-                            <time class="comment-time" datetime="2014-01-14T23:05">{{$row['created_at']}}</time>
-                        </div>
-                    </div>
-
-                    <div class="comment-text">
-                        <p>{{$row['comment']}}</p>
-                    </div>
-
-                </li>
-                @endforeach
-                </ol> <!-- Commentlist End -->
-
-               <div class="respond">
-
-                    <h3 class="h2">Add Comment</h3>
-
-                    <form name="contactForm" id="contactForm" method="post" action="AddComment">
-                        <fieldset>
-
-                        <input type="hidden" name="id" value="{{$response['blog']['id']}}">
-                            <div class="message form-field">
-                                <textarea name="comment" id="cMessage" class="full-width" placeholder="Your Message" reqiured></textarea>
-                            </div>
-
-                            <button type="submit" class="full-width">Submit</button>
-
-                        </fieldset>
-                    </form> <!-- end form -->
-
-                    </div> <!-- end respond -->
-
-            </div>  <!-- Comments End -->
-            
-
-         </div>
+         </div> <!-- Primary End-->
 
          <div id="secondary" class="four columns end">
 
@@ -268,9 +205,9 @@
                </div>
 
 
-            </aside> <!-- Sidebar End -->
+            </aside>
 
-         </div> <!-- Comments End -->
+         </div> <!-- Secondary End-->
 
       </div>
 
@@ -311,7 +248,7 @@
 
       </div>
 
-   </section> <!-- Tweet Section End-->
+   </section> <!-- Tweets Section End-->
 
    <!-- footer
    ================================================== -->
@@ -321,10 +258,10 @@
 
          <div class="twelve columns">
 
-            <ul class="footer-nav">
-					<li><a href="index.html">Home.</a></li>
+             <ul class="footer-nav">
+					<li><a href="/index">Home.</a></li>
               	<li><a href="blog.html">Blog.</a></li>
-              	<li><a href="portfolio-index.html">Portfolio.</a></li>
+              	<li><a href="portfolio-/index">Portfolio.</a></li>
               	<li><a href="about.html">About.</a></li>
               	<li><a href="contact.html">Contact.</a></li>
                <li><a href="styles.html">Features.</a></li>

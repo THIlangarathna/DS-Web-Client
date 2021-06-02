@@ -42,7 +42,7 @@
          <div class="twelve columns">
 
             <div class="logo">
-               <a href="index.html"><img alt="" src="images/logo.png"></a>
+               <a href="/"><img alt="" src="images/logo.png"></a>
             </div>
 
             <nav id="nav-wrap">
@@ -52,23 +52,35 @@
 
                <ul id="nav" class="nav">
 
-	               <li><a href="index.html">Home</a></li>
-	               <li class="current"><span><a href="blog.html">Blog</a></span>
+	               <li class="current"><a href="/">Home</a></li>
+	               <li><span><a href="/Allblogs">Blog</a></span>
                      <ul>
-                     <li><a href="/Blog">My Blogs</a></li>
                         <li><a href="/Allblogs">View Blogs</a></li>
-                        <li><a href="/CreateBlog">Create Blog</a></li>
+                        <li><a href="apilogin">Create Blog</a></li>
                      </ul>
                   </li>
-                  <li><span><a href="portfolio-index.html">Portfolio</a></span>
+                  <li><span><a href="/Allquestions">QnA</a></span>
                      <ul>
-                        <li><a href="portfolio-index.html">Portfolio Index</a></li>
-                        <li><a href="portfolio.html">Portfolio Entry</a></li>
+                        <li><a href="/Allquestions">View QnAs</a></li>
+                        <li><a href="apilogin">Ask Questions</a></li>
                      </ul>
                   </li>
-	               <li><a href="about.html">About</a></li>
-                  <li><a href="contact.html">Contact</a></li>
-                  <li><a href="styles.html">Features</a></li>
+                  <li><span><a href="/categories">Categories</a></span>
+                  <ul>
+                        <li><a href="blog.html">Category 1</a></li>
+                        <li><a href="blog.html">Category 2</a></li>
+                        <li><a href="blog.html">Category 3</a></li>
+                        <li><a href="blog.html">Category 4</a></li>
+                        <li><a href="blog.html">Category 5</a></li>
+                        <li><a href="blog.html">Category 6</a></li>
+                        <li><a href="blog.html">Category 7</a></li>
+                        <li><a href="blog.html">Category 8</a></li>
+                     </ul>
+                  </li>
+	               <li><a href="/about">About</a></li>
+                  <li><a href="/contact">Contact</a></li>
+                  <li><a href="apilogin">Log In</a></li>
+                  <li><a href="apiregister">Sign Up</a></li>
 
                </ul> <!-- end #nav -->
 
@@ -160,7 +172,7 @@
                <!-- commentlist -->
                <ol class="commentlist">
 
-               @foreach ($response['my_comments'] as $row)
+               @foreach ($response['comments'] as $row)
                   <li class="depth-1">
 
                      <div class="avatar">
@@ -178,37 +190,9 @@
                      <div class="comment-text">
                         <p>{{$row['comment']}}</p>
                      </div>
-
                   </li>
                   @endforeach
                </ol> <!-- Commentlist End -->
-
-               <!-- commentlist -->
-               <ol class="commentlist">
-
-               @foreach ($response['others_comments'] as $row)
-                  <li class="depth-1">
-
-                     <div class="avatar">
-                        <img width="50" height="50" class="avatar" src="{{Storage::disk('s3')->url($row['img'])}}" alt="">
-                     </div>
-
-                     <div class="comment-info">
-                        <cite>{{$row['name']}}</cite>
-
-                        <div class="comment-meta">
-                           <time class="comment-time" datetime="2014-01-14T23:05">{{$row['created_at']}}</time>
-                        </div>
-                     </div>
-
-                     <div class="comment-text">
-                        <p>{{$row['comment']}}</p>
-                     </div>
-
-                  </li>
-                  @endforeach
-               </ol> <!-- Commentlist End -->
-
 
             </div>  <!-- Comments End -->
             

@@ -42,7 +42,7 @@
          <div class="twelve columns">
 
             <div class="logo">
-               <a href="index.html"><img alt="" src="images/logo.png"></a>
+               <a href="/"><img alt="" src="images/logo.png"></a>
             </div>
 
             <nav id="nav-wrap">
@@ -52,17 +52,17 @@
 
                <ul id="nav" class="nav">
 
-	               <li class="current"><a href="index.html">Home</a></li>
+	               <li class="current"><a href="/">Home</a></li>
 	               <li><span><a href="/Allblogs">Blog</a></span>
                      <ul>
                         <li><a href="/Allblogs">View Blogs</a></li>
-                        <li><a href="single.html">Create Blog</a></li>
+                        <li><a href="apilogin">Create Blog</a></li>
                      </ul>
                   </li>
-                  <li><span><a href="blog.html">QnA</a></span>
+                  <li><span><a href="/Allquestions">QnA</a></span>
                      <ul>
-                        <li><a href="blog.html">View QnAs</a></li>
-                        <li><a href="single.html">Ask Questions</a></li>
+                        <li><a href="/Allquestions">View QnAs</a></li>
+                        <li><a href="apilogin">Ask Questions</a></li>
                      </ul>
                   </li>
                   <li><span><a href="/categories">Categories</a></span>
@@ -77,10 +77,10 @@
                         <li><a href="blog.html">Category 8</a></li>
                      </ul>
                   </li>
-	               <li><a href="about.html">About</a></li>
-                  <li><a href="contact.html">Contact</a></li>
-                  <li><a href="styles.html">Log In</a></li>
-                  <li><a href="styles.html">Sign Up</a></li>
+	               <li><a href="/about">About</a></li>
+                  <li><a href="/contact">Contact</a></li>
+                  <li><a href="apilogin">Log In</a></li>
+                  <li><a href="apiregister">Sign Up</a></li>
 
                </ul> <!-- end #nav -->
 

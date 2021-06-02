@@ -42,7 +42,7 @@
          <div class="twelve columns">
 
             <div class="logo">
-               <a href="index.html"><img alt="" src="images/logo.png"></a>
+               <a href="/"><img alt="" src="images/logo.png"></a>
             </div>
 
             <nav id="nav-wrap">
@@ -52,17 +52,17 @@
 
                <ul id="nav" class="nav">
 
-	               <li class="current"><a href="index.html">Home</a></li>
+	               <li class="current"><a href="/">Home</a></li>
 	               <li><span><a href="/Allblogs">Blog</a></span>
                      <ul>
                         <li><a href="/Allblogs">View Blogs</a></li>
-                        <li><a href="single.html">Create Blog</a></li>
+                        <li><a href="apilogin">Create Blog</a></li>
                      </ul>
                   </li>
                   <li><span><a href="/Allquestions">QnA</a></span>
                      <ul>
                         <li><a href="/Allquestions">View QnAs</a></li>
-                        <li><a href="single.html">Ask Questions</a></li>
+                        <li><a href="apilogin">Ask Questions</a></li>
                      </ul>
                   </li>
                   <li><span><a href="/categories">Categories</a></span>
@@ -77,8 +77,8 @@
                         <li><a href="blog.html">Category 8</a></li>
                      </ul>
                   </li>
-	               <li><a href="about.html">About</a></li>
-                  <li><a href="contact.html">Contact</a></li>
+	               <li><a href="/about">About</a></li>
+                  <li><a href="/contact">Contact</a></li>
                   <li><a href="apilogin">Log In</a></li>
                   <li><a href="apiregister">Sign Up</a></li>
 
@@ -337,11 +337,11 @@
             <div class="entry-header">
 
                <div class="permalink">
-                  <a href="single.html"><i class="fa fa-link"></i></a>
+                  <a href="/ShowBlogGuest{{$row['id']}}"><i class="fa fa-link"></i></a>
                </div>
 
                <div class="ten columns entry-title pull-right">
-                  <h3><a href="single.html">{{$row['title']}}</a></h3>
+                  <h3><a href="/ShowBlogGuest{{$row['id']}}">{{$row['title']}}</a></h3>
                </div>
 
                <div class="two columns post-meta end">
@@ -355,7 +355,7 @@
 
             <div class="ten columns offset-2 post-content">
                <p>{{$row['intro']}}.
-               <a class="more-link" href="single.html">Read More<i class="fa fa-arrow-circle-o-right"></i></a></p>
+               <a class="more-link" href="/ShowBlogGuest{{$row['id']}}">Read More<i class="fa fa-arrow-circle-o-right"></i></a></p>
             </div>
 
          </article> <!-- Entry End -->

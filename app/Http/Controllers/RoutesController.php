@@ -273,7 +273,7 @@ class RoutesController extends Controller
                 'authorization' => "Bearer $access_token"
             ])->get('http://35.235.105.40/api/Question');
             $json = json_decode($response,true);
-            return view('Question.QAFeed')->with('response', $response);
+            return view('Question.MyQAFeed')->with('response', $response);
         }
         else
         {
@@ -317,7 +317,7 @@ class RoutesController extends Controller
                 'authorization' => "Bearer $access_token"
             ])->get('http://35.235.105.40/api/Question');
                 $json = json_decode($response,true);
-                return view('Question.QAFeed')->with('response', $response);
+                return view('Question.MyQAFeed')->with('response', $response);
         }
         else
         {
@@ -342,7 +342,7 @@ class RoutesController extends Controller
                 'authorization' => "Bearer $access_token"
             ])->get('http://35.235.105.40/api/Question');
                 $json = json_decode($response,true);
-                return view('Question.QAFeed')->with('response', $response);
+                return view('Question.MyQAFeed')->with('response', $response);
         }
     }
 
@@ -354,7 +354,7 @@ class RoutesController extends Controller
             'authorization' => "Bearer $access_token"
         ])->get('http://35.235.105.40/api/Question');
             $json = json_decode($response,true);
-            return view('Question.QAFeed')->with('response', $response);
+            return view('Question.MyQAFeed')->with('response', $response);
     }
 
     public function questionshow($id)
@@ -528,7 +528,7 @@ class RoutesController extends Controller
 
         // return $response;
         $json = json_decode($response,true);
-        return view('Blog.BlogFeedN')->with('response', $response);
+        return view('Guest.BlogFeedN')->with('response', $response);
     }
 
     public function blogshowguest($id)
@@ -539,7 +539,7 @@ class RoutesController extends Controller
 
         $json = json_decode($response,true);
         // return $response;
-        return view('Blog.ViewBlogN')->with('response', $response);
+        return view('Guest.ViewBlogN')->with('response', $response);
     }
 
     public function allquestions()
@@ -549,7 +549,7 @@ class RoutesController extends Controller
 
         // return $response;
         $json = json_decode($response,true);
-        return view('Question.QAFeedN')->with('response', $response);
+        return view('Guest.MyQAFeedN')->with('response', $response);
     }
 
     public function questionshowguest($id)
@@ -560,7 +560,7 @@ class RoutesController extends Controller
 
         $json = json_decode($response,true);
         // return $response;
-        return view('Question.ViewQAN')->with('response', $response);
+        return view('Guest.ViewQAN')->with('response', $response);
     }
     public function homelogged()
     {
@@ -569,5 +569,111 @@ class RoutesController extends Controller
         // return $response;
         $json = json_decode($response,true);
         return view('indexA')->with('response', $response);
+    }
+
+    public function allblogsAuth()
+    {
+
+        $response = Http::get("http://104.198.5.191/api/blogs");
+
+        // return $response;
+        $json = json_decode($response,true);
+        return view('Blog.BlogFeed')->with('response', $response);
+    }
+
+    public function allquestionsAuth()
+    {
+
+        $response = Http::get("http://35.235.105.40/api/questions");
+
+        // return $response;
+        $json = json_decode($response,true);
+        return view('Question.QAFeed')->with('response', $response);
+    }
+
+    public function profile($id)
+    {
+        // return $id;
+        $access_token = session('access_token', 'default value');
+
+        $response = Http::withHeaders([
+            'accept' => 'application/json',
+            'authorization' => "Bearer $access_token"
+            ])->get("http://35.223.106.12/api/Profile$id");
+
+            $json = json_decode($response,true);
+            return $response;
+            return view('User.Profile')->with('response', $response);
+    }
+
+    public function profile1($name)
+    {
+        // return $name;
+        $access_token = session('access_token', 'default value');
+
+        $response = Http::withHeaders([
+            'accept' => 'application/json',
+            'authorization' => "Bearer $access_token"
+            ])->get("http://35.223.106.12/api/Profile1$name");
+
+            $json = json_decode($response,true);
+            // return $response;
+            return view('User.Profile')->with('response', $response);
+    }
+
+    public function bprofile($id)
+    {
+        $access_token = session('access_token', 'default value');
+
+        $response = Http::withHeaders([
+            'accept' => 'application/json',
+            'authorization' => "Bearer $access_token"
+            ])->get("http://35.223.106.12/api/BProfile$id");
+
+            $json = json_decode($response,true);
+            // return $response;
+            return view('User.Profile')->with('response', $response);
+    }
+
+    public function cprofile($id)
+    {
+        $access_token = session('access_token', 'default value');
+
+        $response = Http::withHeaders([
+            'accept' => 'application/json',
+            'authorization' => "Bearer $access_token"
+            ])->get("http://35.223.106.12/api/CProfile$id");
+
+            $json = json_decode($response,true);
+            // return $response;
+            return view('User.Profile')->with('response', $response);
+    }
+
+    public function qprofile($id)
+    {
+        $access_token = session('access_token', 'default value');
+
+        $response = Http::withHeaders([
+            'accept' => 'application/json',
+            'authorization' => "Bearer $access_token"
+            ])->get("http://35.223.106.12/api/QProfile$id");
+
+            $json = json_decode($response,true);
+            // return $response;
+            return view('User.Profile')->with('response', $response);
+    }
+
+    public function aprofile($id)
+    {
+        $access_token = session('access_token', 'default value');
+
+        $response = Http::withHeaders([
+            'accept' => 'application/json',
+            'authorization' => "Bearer $access_token"
+            ])->get("http://35.223.106.12/api/AProfile$id");
+
+            $json = json_decode($response,true);
+            // return $response;
+            return view('User.Profile')->with('response', $response);
     }
 }

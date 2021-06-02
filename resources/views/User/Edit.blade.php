@@ -1,17 +1,34 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
 <head>
 
-    <!--- basic page needs
-    ================================================== -->
-    <meta charset="utf-8">
-    <title>User Dashboard</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>Blog | Sparrow</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
 
-    <!-- mobile specific metas
+   <!-- Mobile Specific Metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
     ================================================== -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+   <link rel="stylesheet" href="css/default.css">
+	<link rel="stylesheet" href="css/layout.css">
+   <link rel="stylesheet" href="css/media-queries.css">
+
+   <!-- Script
+   ================================================== -->
+	<script src="js/modernizr.js"></script>
+
+   <!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="favicon.ico" >
+
 
     <!-- CSS
     ================================================== -->
@@ -24,89 +41,94 @@
     <script src="js/modernizr.js"></script>
     <script src="js/pace.min.js"></script>
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="http://cdn.ckeditor.com/4.6.2/standard-all/ckeditor.js"></script>
 
 </head>
 
-<body id="top">
+<body>
 
-    <!-- pageheader
-    ================================================== -->
-    <div class="s-pageheader">
+   <!-- Header
+   ================================================== -->
+   <header>
 
-        <header class="header">
-            <div class="header__content row">
+   <div class="row">
 
-                <div class="header__logo">
-                    <a class="logo" href="index.html">
-                        <img src="images/logo.png" alt="Homepage">
-                    </a>
-                </div> <!-- end header__logo -->
+<div class="twelve columns">
 
-                <ul class="header__social">
-                    <li>
-                        <a href="#0"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                    </li>
-                    <li>
-                        <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                    </li>
-                    <li>
-                        <a href="#0"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                    </li>
-                    <li>
-                        <a href="#0"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                    </li>
-                </ul> <!-- end header__social -->
+   <div class="logo">
+      <a href="/index"><img alt="" src="images/logo.png"></a>
+   </div>
 
-                <a class="header__search-trigger" href="#0"></a>
+   <nav id="nav-wrap">
 
-                <div class="header__search">
+      <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
 
-                    <form role="search" method="get" class="header__search-form" action="#">
-                        <label>
-                            <span class="hide-content">Search for:</span>
-                            <input type="search" class="search-field" placeholder="Type Keywords" value="" name="s" title="Search for:" autocomplete="off">
-                        </label>
-                        <input type="submit" class="search-submit" value="Search">
-                    </form>
-        
-                    <a href="#0" title="Close Search" class="header__overlay-close">Close</a>
+      <ul id="nav" class="nav">
 
-                </div>  <!-- end header__search -->
+         <li class="current"><a href="/index">Home</a></li>
+         <li><span><a href="/AllblogsAuth">Blog</a></span>
+            <ul>
+               <li><a href="/Blog">My Blogs</a></li>
+               <li><a href="/AllblogsAuth">View Blogs</a></li>
+               <li><a href="/CreateBlog">Create Blog</a></li>
+            </ul>
+         </li>
+         <li><span><a href="/AllquestionsAuth">QnA</a></span>
+            <ul>
+               <li><a href="/Question">My QnAs</a></li>
+               <li><a href="/AllquestionsAuth">View QnAs</a></li>
+               <li><a href="/CreateQuestion">Ask Questions</a></li>
+            </ul>
+         </li>
+         <li><span><a href="/categories">Categories</a></span>
+         <ul>
+               <li><a href="blog.html">Category 1</a></li>
+               <li><a href="blog.html">Category 2</a></li>
+               <li><a href="blog.html">Category 3</a></li>
+               <li><a href="blog.html">Category 4</a></li>
+               <li><a href="blog.html">Category 5</a></li>
+               <li><a href="blog.html">Category 6</a></li>
+               <li><a href="blog.html">Category 7</a></li>
+               <li><a href="blog.html">Category 8</a></li>
+            </ul>
+         </li>
+         <li><a href="/aboutAuth">About</a></li>
+         <li><a href="/contactAuth">Contact</a></li>
+         <li><span><a href="/MyDashboard">My Account</a></span>
+                  <ul>
+                        <li><a href="/MyDashboard">My Dashboard</a></li>
+                        <li><a href="/">Sign Out</a></li>
+                     </ul>
+                  </li>
 
+      </ul> <!-- end #nav -->
 
-                <a class="header__toggle-menu" href="#0" title="Menu"><span>Menu</span></a>
+   </nav> <!-- end #nav-wrap -->
 
-                <nav class="header__nav-wrap">
+</div>
 
-                    <h2 class="header__nav-heading h6">Site Navigation</h2>
-                    <ul class="header__nav">
-                        <li class="current"><a href="index.html" title="">Home</a></li>
-                        <li class="has-children">
-                            <a href="#0" title="">Categories</a>
-                            <ul class="sub-menu">
-                            <li><a href="category.html">Stories</a></li>
-                            <li><a href="category.html">Poems</a></li>
-                            <li><a href="category.html">Quotes</a></li>
-                            <li><a href="category.html">Events</a></li>
+</div>
 
-                            </ul>
-                        </li>
-                        <li><a href="style-guide.html" title="">Styles</a></li>
-                        <li><a href="about.html" title="">About</a></li>
-                        <li><a href="contact.html" title="">Contact</a></li>
-                        <li><a href="/l" title="">Sign In</a></li>
-                        <li><a href="contact.html" title="">Sign Up</a></li>
-                    </ul> <!-- end header__nav -->
+   </header> <!-- Header End -->
 
-                    <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
+   <!-- Page Title
+   ================================================== -->
+   <div id="page-title">
 
-                </nav> <!-- end header__nav-wrap -->
+      <div class="row">
 
-            </div> <!-- header-content -->
-        </header> <!-- header -->
+         <div class="ten columns centered text-center">
+            <h1>Our Blog<span>.</span></h1>
 
-    </div> <!-- end s-pageheader -->
+            <p>Aenean condimentum, lacus sit amet luctus lobortis, dolores et quas molestias excepturi
+            enim tellus ultrices elit, amet consequat enim elit noneas sit amet luctu. </p>
+         </div>
+
+      </div>
+
+   </div> <!-- Page Title End-->
 
         
     </section> <!-- s-content -->
@@ -161,88 +183,114 @@
     </section> <!-- s-content -->
   
 
+<!-- Call-To-Action Section
+   ================================================== -->
+   <section id="call-to-action">
 
-    <!-- s-footer
-    ================================================== -->
-    <footer class="s-footer">
+      <div class="row">
 
-        <div class="s-footer__main">
-            <div class="row">
-                
-                <div class="col-two md-four mob-full s-footer__sitelinks">
-                        
-                    <h4>Quick Links</h4>
+         <div class="eight columns offset-1">
 
-                    <ul class="s-footer__linklist">
-                        <li><a href="#0">Home</a></li>
-                        <li><a href="#0">About</a></li>
-                        <li><a href="#0">Contact</a></li>
-                    </ul>
+            <h1><a href="blog-single.html">Voluptate Velit Esse</a><a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">.</a></h1>
+            <p>Ducimus qui blanditiis praesentium voluptatum
+            deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate<!-- Simply type	the promocode in the box labeled “Promo Code” when placing your order. -->. </p>
 
-                </div> <!-- end s-footer__sitelinks -->
+         </div>
 
+         <div class="three columns action">
 
+            
 
-                <div class="col-two md-four mob-full s-footer__social">
-                        
-                    <h4>Social</h4>
+         </div>
 
-                    <ul class="s-footer__linklist">
-                        <li><a href="#0">Facebook</a></li>
-                        <li><a href="#0">Instagram</a></li>
-                        <li><a href="#0">Twitter</a></li>
-                        <li><a href="#0">Pinterest</a></li>
-                        <li><a href="#0">LinkedIn</a></li>
-                    </ul>
+      </div>
 
-                </div> <!-- end s-footer__social -->
+   </section> <!-- Call-To-Action Section End-->
+   <!-- Tweets Section
+   ================================================== -->
+   <section id="tweets">
 
-                <div class="col-five md-full end s-footer__subscribe">
-                        
-                    <h4>Our Newsletter</h4>
+      <div class="row">
 
-                    <p>Sit vel delectus amet officiis repudiandae est voluptatem. Tempora maxime provident nisi et fuga et enim exercitationem ipsam. Culpa consequatur occaecati.</p>
+         <div class="tweeter-icon align-center">
+            <i class="fa fa-twitter"></i>
+         </div>
 
-                    <div class="subscribe-form">
-                        <form id="mc-form" class="group" novalidate="true">
+         <ul id="twitter" class="align-center">
+            <li>
+               <span>
+               This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
+               Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum
+               <a href="#">http://t.co/CGIrdxIlI3</a>
+               </span>
+               <b><a href="#">2 Days Ago</a></b>
+            </li>
+            <!--
+            <li>
+               <span>
+               This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
+               Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum
+               <a href="#">http://t.co/CGIrdxIlI3</a>
+               </span>
+               <b><a href="#">3 Days Ago</a></b>
+            </li>
+            -->
+         </ul>
 
-                            <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Email Address" required="">
-                
-                            <input type="submit" name="subscribe" value="Send">
-                
-                            <label for="mc-email" class="subscribe-message"></label>
-                
-                        </form>
-                    </div>
+         <p class="align-center"><a href="#" class="button">Follow us</a></p>
 
-                </div> <!-- end s-footer__subscribe -->
+      </div>
 
-            </div>
-        </div> <!-- end s-footer__main -->
+   </section> <!-- Tweets Section End-->
 
-        <div class="s-footer__bottom">
-            <div class="row">
-                <div class="col-full">
-                    <div class="s-footer__copyright">
-                        <span>© Copyright Answer Bug</span> 
-                    
-                    </div>
+   <!-- footer
+   ================================================== -->
+   <footer>
 
-                    <div class="go-top">
-                        <a class="smoothscroll" title="Back to Top" href="#top"></a>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- end s-footer__bottom -->
+      <div class="row">
 
-    </footer> <!-- end s-footer -->
+         <div class="twelve columns">
 
-    <!-- Java Script
-    ================================================== -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+             <ul class="footer-nav">
+					<li><a href="/index">Home.</a></li>
+              	<li><a href="blog.html">Blog.</a></li>
+              	<li><a href="portfolio-/index">Portfolio.</a></li>
+              	<li><a href="about.html">About.</a></li>
+              	<li><a href="contact.html">Contact.</a></li>
+               <li><a href="styles.html">Features.</a></li>
+			   </ul>
 
+            <ul class="footer-social">
+               <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+               <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+               <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+               <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+               <li><a href="#"><i class="fa fa-skype"></i></a></li>
+               <li><a href="#"><i class="fa fa-rss"></i></a></li>
+            </ul>
+
+            <ul class="copyright">
+               <li>Copyright &copy; 2014 Sparrow</li> 
+               <li>Design by <a href="http://www.styleshout.com/" target="_blank">Styleshout</a></li>               
+            </ul>
+
+         </div>
+
+         <div id="go-top" style="display: block;"><a title="Back to Top" href="#">Go To Top</a></div>
+
+      </div>
+
+   </footer> <!-- Footer End-->
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+
+   <script src="js/jquery.flexslider.js"></script>
+   <script src="js/doubletaptogo.js"></script>
+   <script src="js/init.js"></script>
 </body>
 
 </html>

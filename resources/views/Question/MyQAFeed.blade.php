@@ -37,59 +37,64 @@
    ================================================== -->
    <header>
 
-      <div class="row">
+   <div class="row">
 
-         <div class="twelve columns">
+<div class="twelve columns">
 
-            <div class="logo">
-               <a href="/index"><img alt="" src="images/logo.png"></a>
-            </div>
+   <div class="logo">
+      <a href="/index"><img alt="" src="images/logo.png"></a>
+   </div>
 
-            <nav id="nav-wrap">
+   <nav id="nav-wrap">
 
-               <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
-	            <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+      <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
 
-               <ul id="nav" class="nav">
+      <ul id="nav" class="nav">
 
-	               <li class="current"><a href="/index">Home</a></li>
-	               <li><span><a href="/Allblogs">Blog</a></span>
-                     <ul>
-                        <li><a href="/Blog">My Blogs</a></li>
-                        <li><a href="/Allblogs">View Blogs</a></li>
-                        <li><a href="/CreateBlog">Create Blog</a></li>
-                     </ul>
-                  </li>
-                  <li><span><a href="blog.html">QnA</a></span>
-                     <ul>
-                        <li><a href="blog.html">View QnAs</a></li>
-                        <li><a href="single.html">Ask Questions</a></li>
-                     </ul>
-                  </li>
-                  <li><span><a href="/categories">Categories</a></span>
+         <li class="current"><a href="/index">Home</a></li>
+         <li><span><a href="/AllblogsAuth">Blog</a></span>
+            <ul>
+               <li><a href="/Blog">My Blogs</a></li>
+               <li><a href="/AllblogsAuth">View Blogs</a></li>
+               <li><a href="/CreateBlog">Create Blog</a></li>
+            </ul>
+         </li>
+         <li><span><a href="/AllquestionsAuth">QnA</a></span>
+            <ul>
+               <li><a href="/Question">My QnAs</a></li>
+               <li><a href="/AllquestionsAuth">View QnAs</a></li>
+               <li><a href="/CreateQuestion">Ask Questions</a></li>
+            </ul>
+         </li>
+         <li><span><a href="/categories">Categories</a></span>
+         <ul>
+               <li><a href="blog.html">Category 1</a></li>
+               <li><a href="blog.html">Category 2</a></li>
+               <li><a href="blog.html">Category 3</a></li>
+               <li><a href="blog.html">Category 4</a></li>
+               <li><a href="blog.html">Category 5</a></li>
+               <li><a href="blog.html">Category 6</a></li>
+               <li><a href="blog.html">Category 7</a></li>
+               <li><a href="blog.html">Category 8</a></li>
+            </ul>
+         </li>
+         <li><a href="/aboutAuth">About</a></li>
+         <li><a href="/contactAuth">Contact</a></li>
+         <li><span><a href="/MyDashboard">My Account</a></span>
                   <ul>
-                        <li><a href="blog.html">Category 1</a></li>
-                        <li><a href="blog.html">Category 2</a></li>
-                        <li><a href="blog.html">Category 3</a></li>
-                        <li><a href="blog.html">Category 4</a></li>
-                        <li><a href="blog.html">Category 5</a></li>
-                        <li><a href="blog.html">Category 6</a></li>
-                        <li><a href="blog.html">Category 7</a></li>
-                        <li><a href="blog.html">Category 8</a></li>
+                        <li><a href="/MyDashboard">My Dashboard</a></li>
+                        <li><a href="/">Sign Out</a></li>
                      </ul>
                   </li>
-	               <li><a href="about.html">About</a></li>
-                  <li><a href="contact.html">Contact</a></li>
-                  <li><a href="styles.html">Log In</a></li>
-                  <li><a href="styles.html">Sign Up</a></li>
 
-               </ul> <!-- end #nav -->
+      </ul> <!-- end #nav -->
 
-            </nav> <!-- end #nav-wrap -->
+   </nav> <!-- end #nav-wrap -->
 
-         </div>
+</div>
 
-      </div>
+</div>
 
    </header> <!-- Header End -->
 
@@ -118,35 +123,27 @@
 
          <div id="primary" class="eight columns">
 
-         @foreach ($response['blogs'] as $row)
+         @foreach ($response['questions'] as $row)
             <article class="post">
 
                <div class="entry-header cf">
 
-                  <h1><a href="/ShowBlog{{$row['id']}}" title="">{{$row['title']}}</a></h1>
+                  <h1><a href="/ShowQuestion{{$row['id']}}" title="">{{$row['title']}}</a></h1>
 
                   <p class="post-meta">
 
                      <time class="date" datetime="2014-01-14T11:24">{{$row['created_at']}}</time>
                      /
                      <span class="categories">
-                     <a href="#">By {{$row['name']}}</a> /
+                     <a href="/MyDashBoard">By {{$response['user']['name']}}</a> /
                      <a href="#">{{$row['category']}}</a> /
                      </span>
 
                   </p>
-
+                  <a href="/Question{{$row['id']}}" style="float: right;"><i class="fa fa-edit"></i>Edit</a><br>
+<a href="/DeleteQuestion{{$row['id']}}" style="float: right;"><i class="fa fa-trash"></i></a>
                </div>
 
-               <div class="post-thumb">
-                  <a href="/ShowBlog{{$row['id']}}" title=""><img src="{{Storage::disk('s3')->url($row['img'])}}" alt="post-image" title="post-image"></a>
-               </div>
-
-               <div class="post-content">
-
-                  <p>{{$row['intro']}}</p>
-
-               </div>
 
             </article> <!-- post end -->
             @endforeach
@@ -260,9 +257,9 @@
          <div class="twelve columns">
 
              <ul class="footer-nav">
-					<li><a href="/index">Home.</a></li>
+					<li><a href="index.html">Home.</a></li>
               	<li><a href="blog.html">Blog.</a></li>
-              	<li><a href="portfolio-/index">Portfolio.</a></li>
+              	<li><a href="portfolio-index.html">Portfolio.</a></li>
               	<li><a href="about.html">About.</a></li>
               	<li><a href="contact.html">Contact.</a></li>
                <li><a href="styles.html">Features.</a></li>

@@ -67,20 +67,7 @@
                <li><a href="/CreateQuestion">Ask Questions</a></li>
             </ul>
          </li>
-         <li><span><a href="/categories">Categories</a></span>
-         <ul>
-               <li><a href="blog.html">Category 1</a></li>
-               <li><a href="blog.html">Category 2</a></li>
-               <li><a href="blog.html">Category 3</a></li>
-               <li><a href="blog.html">Category 4</a></li>
-               <li><a href="blog.html">Category 5</a></li>
-               <li><a href="blog.html">Category 6</a></li>
-               <li><a href="blog.html">Category 7</a></li>
-               <li><a href="blog.html">Category 8</a></li>
-            </ul>
-         </li>
          <li><a href="/aboutAuth">About</a></li>
-         <li><a href="/contactAuth">Contact</a></li>
          <li><span><a href="/MyDashboard">My Account</a></span>
                   <ul>
                         <li><a href="/MyDashboard">My Dashboard</a></li>
@@ -105,7 +92,7 @@
       <div class="row">
 
          <div class="ten columns centered text-center">
-            <h1>Our Blog<span>.</span></h1>
+            <h1>All Blogs<span>.</span></h1>
 
             <p>Aenean condimentum, lacus sit amet luctus lobortis, dolores et quas molestias excepturi
             enim tellus ultrices elit, amet consequat enim elit noneas sit amet luctu. </p>
@@ -156,22 +143,6 @@
             </article> <!-- post end -->
             @endforeach
 
-            <!-- Pagination -->
-            <nav class="col full pagination">
-  			      <ul>
-                  <li><span class="page-numbers prev inactive">Prev</span></li>
-  				      <li><span class="page-numbers current">1</span></li>
-  				      <li><a href="#" class="page-numbers">2</a></li>
-                  <li><a href="#" class="page-numbers">3</a></li>
-                  <li><a href="#" class="page-numbers">4</a></li>
-                  <li><a href="#" class="page-numbers">5</a></li>
-                  <li><a href="#" class="page-numbers">6</a></li>
-                  <li><a href="#" class="page-numbers">7</a></li>
-                  <li><a href="#" class="page-numbers">8</a></li>
-                  <li><a href="#" class="page-numbers">9</a></li>
-  				      <li><a href="#" class="page-numbers next">Next</a></li>
-  			      </ul>
-  		      </nav>
 
          </div> <!-- Primary End-->
 
@@ -190,7 +161,7 @@
                </div>
 
                <div class="widget widget_text">
-                  <h5 class="widget-title">Text Widget</h5>
+                  <h5 class="widget-title">AnswerBug</h5>
                   <div class="textwidget">Proin gravida nibh vel velit auctor aliquet.
                   Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum,
                   nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus
@@ -200,13 +171,14 @@
                <div class="widget widget_categories">
                   <h5 class="widget-title">Categories</h5>
                   <ul class="link-list cf">
-                     <li><a href="#">Designs</a></li>
-                     <li><a href="#">Internet</a></li>
-                     <li><a href="#">Typography</a></li>
-                     <li><a href="#">Photography</a></li>
-                     <li><a href="#">Web Development</a></li>
-                     <li><a href="#">Projects</a></li>
-                     <li><a href="#">Other Stuff</a></li>
+                     <li><a href="#">Technology</a></li>
+                     <li><a href="#">Nature</a></li>
+                     <li><a href="#">Health</a></li>
+                     <li><a href="#">Journalism</a></li>
+                     <li><a href="#">Education</a></li>
+                     <li><a href="#">Writing</a></li>
+                     <li><a href="#">Science</a></li>
+                     <li><a href="#">Design</a></li>
                   </ul>
                </div>
 

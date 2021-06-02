@@ -120,7 +120,7 @@
       <div class="row">
 
          <div class="ten columns centered text-center">
-            <h1>Our Blog<span>.</span></h1>
+            <h1>My Dashboard<span>.</span></h1>
 
             <p>Aenean condimentum, lacus sit amet luctus lobortis, dolores et quas molestias excepturi
             enim tellus ultrices elit, amet consequat enim elit noneas sit amet luctu. </p>
@@ -135,13 +135,6 @@
     <section class="s-content s-content--narrow s-content--no-padding-bottom">
 
         <article class="row format-standard">
-
-            <div class="s-content__header col-full">
-                <h1 class="s-content__header-title">
-                    My Dashboard
-                </h1>
-
-            </div> <!-- end s-content__header -->
     
             <div class="s-content__media col-four">
                 <div class="s-content__post-thumb">

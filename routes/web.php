@@ -21,27 +21,15 @@ Route::get('/', 'RoutesController@home');
 
 Route::get('/index', 'RoutesController@homelogged');
 
-Route::get('/categories', function () {
-    return view('categories');
-});
-
-Route::get('/category{name}', 'RoutesController@category');
-
 Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/contact', function () {
-    return view('contact');
-});
 
 Route::get('/aboutAuth', function () {
     return view('aboutAuth');
 });
 
-Route::get('/contactAuth', function () {
-    return view('contactAuth');
-});
 
 Route::get('/Allblogs', 'RoutesController@allblogs');
 

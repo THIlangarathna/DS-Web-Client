@@ -120,7 +120,7 @@
       <div class="row">
 
          <div class="ten columns centered text-center">
-            <h1>Our Blog<span>.</span></h1>
+            <h1>Edit Question<span>.</span></h1>
 
             <p>Aenean condimentum, lacus sit amet luctus lobortis, dolores et quas molestias excepturi
             enim tellus ultrices elit, amet consequat enim elit noneas sit amet luctu. </p>
@@ -157,9 +157,14 @@
                         </div>
                         <div class="dropdown-menu">
                             <select  class="full-width" name="category" value="{{$response['question']['category']}}">
-                                <option >Health</option>
-                                <option >Fitness</option>
-                                <option>IT</option>
+                            <option >Technology</option>
+                                <option >Nature</option>
+                                <option>Health</option>
+                                <option>Journalism</option>
+                                <option>Education</option>
+                                <option>Writing</option>
+                                <option>Science</option>
+                                <option>Design</option>
                                 
                               </select>
                        </div>

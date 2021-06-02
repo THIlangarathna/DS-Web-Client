@@ -67,7 +67,7 @@
                         <li><a href="/CreateQuestion">Ask Questions</a></li>
                      </ul>
                   </li>
-                  <li><span><a href="/categories">Categories</a></span>
+                  <li><span><a href="/Cat">Categories</a></span>
                   <ul>
                         <li><a href="blog.html">Category 1</a></li>
                         <li><a href="blog.html">Category 2</a></li>
@@ -80,7 +80,6 @@
                      </ul>
                   </li>
 	               <li><a href="/aboutAuth">About</a></li>
-                  <li><a href="/contactAuth">Contact</a></li>
                   <li><span><a href="/MyDashboard">My Account</a></span>
                   <ul>
                         <li><a href="/MyDashboard">My Dashboard</a></li>
@@ -104,43 +103,41 @@
       <!-- Flexslider Start-->
 	   <div id="intro-slider" class="flexslider">
 
-		   <ul class="slides">
+      <ul class="slides">
 
-			   <!-- Slide -->
-			   <li>
-				   <div class="row">
-					   <div class="twelve columns">
-						   <div class="slider-text">
-							   <h1>Blog<span>.</span></h1>
-							   <p>Aenean condimentum, lacus sit amet luctus lobortis, dolores et quas molestias excepturi
-                        enim tellus ultrices elit, amet consequat enim elit noneas sit amet luctu. lacus sit amet luctus lobortis, dolores et quas molestias excepturi
-                        enim tellus ultrices elit.</p>
-						   </div>
+            <!-- Slide -->
+            <li>
+               <div class="row">
+                  <div class="twelve columns">
+                     <div class="slider-text">
+                        <h1>Blog<span>.</span></h1>
+                        <p>The best ideas can change who we are. AnswerBug is where those ideas take shape, take off, and spark powerful conversations. We’re an open platform where 170 million readers come to find insightful and dynamic thinking. Here, expert and undiscovered voices alike dive into the heart of any topic and bring new ideas to the surface. Our purpose is to spread these ideas and deepen understanding of the world.
+            We’re creating a new model for digital publishing. One that supports nuance, complexity, and vital storytelling without giving in to the incentives of advertising. It’s an environment that’s open to everyone but promotes substance and authenticity. And it’s where deeper connections forged between readers and writers can lead to discovery and growth. Together with millions of collaborators, we’re building a trusted and vibrant ecosystem fueled by important ideas and the people who think about them.
+            </p>
+                     </div>
                      <div class="slider-image">
                         <center><img src="images/sliders/blog.png" alt="" /></center>
                      </div>
-					   </div>
-				   </div>
-			   </li>
+                  </div>
+               </div>
+            </li>
 
             <!-- Slide -->
-			   <li>
-				   <div class="row">
-					   <div class="twelve columns">
-						   <div class="slider-text">
-							   <h1>Questions and Answers<span>.</span></h1>
-							   <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-                        deleniti eos et accusamus. amet consequat enim elit noneas sit amet luctu. lacus sit amet luctus lobortis.
-                        Aenean condimentum, lacus sit amet luctus.</p>
-						   </div>
+            <li>
+               <div class="row">
+                  <div class="twelve columns">
+                     <div class="slider-text">
+                        <h1>Questions and Answers<span>.</span></h1>
+                        <p>The heart of AnswerBug is questions — questions that affect the world, questions that explain recent world events, questions that guide important life decisions, and questions that provide insights into why other people think differently. AnswerBug is a place where you can ask questions you care about and get answers that are amazing. AnswerBug has content you will feel good about having read. AnswerBug helps you understand why the world works the way it does, why people behave the way they do, and what we can all do to make the world better.</p>
+                     </div>
                      <div class="slider-image">
                         <center><img src="images/sliders/qna.png" alt="" /></center>
                      </div>
-					   </div>
-				   </div>
-			   </li>
+                  </div>
+               </div>
+            </li>
 
-		   </ul>
+            </ul>
 
 	   </div> <!-- Flexslider End-->
 
@@ -155,34 +152,30 @@
          <div class="bgrid-quarters s-bgrid-halves">
 
            <div class="columns">
-              <h2>Clean & Modern.</h2>
+              <h2>Q&A</h2>
 
-              <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
-              Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+              <p>You can ask questions about certain categories, and those who have prior knowledge of those categories can respond with their expertise.
               </p>
            </div>
 
            <div class="columns">
-              <h2>Responsive.</h2>
+              <h2>Blog</h2>
 
-              <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
-              Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+              <p>If you enjoy writing content, you may use our blog to express your thoughts and valuable stuff.
               </p>
            </div>
 
            <div class="columns s-first">
-              <h2>HTML5 + CSS3.</h2>
+              <h2>Comment</h2>
 
-              <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
-              Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+              <p>you can share your ideas regarding content in our blog by adding comments to a specific posts 
               </p>
            </div>
 
            <div class="columns">
-              <h2>Free of Charge.</h2>
+              <h2>Wysiwyg</h2>
 
-              <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
-              Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+              <p>Wysiwyg editor allows a user to write or update content with font formatings, images, code snippets and different types of functionalities.
               </p>
            </div>
 
@@ -206,112 +199,104 @@
 
     		   <div class="columns portfolio-item">
                <div class="item-wrap">
-    				   <a href="portfolio.html">
-                     <img alt="" src="images/portfolio/geometrics.jpg">
+    				   <a href="">
+                     <img alt="" src="Categories/technology.jpg">
                      <div class="overlay"></div>
                      <div class="link-icon"><i class="fa fa-link"></i></div>
                   </a>
     					<div class="portfolio-item-meta">
-    					   <h5><a href="portfolio.html">Geometrics</a></h5>
-                     <p>Illustration</p>
+    					   <h5><a href="">Technology</a></h5>
     					</div>
                </div>
     			</div>
 
             <div class="columns portfolio-item">
                <div class="item-wrap">
-    				   <a href="portfolio.html">
-                     <img alt="" src="images/portfolio/console.jpg">
+    				   <a href="">
+                     <img alt="" src="Categories/nature.jpg">
                      <div class="overlay"></div>
                      <div class="link-icon"><i class="fa fa-link"></i></div>
                   </a>
     					<div class="portfolio-item-meta">
-    					   <h5><a href="portfolio.html">Console</a></h5>
-                     <p>Web Development</p>
+    					   <h5><a href="">Nature</a></h5>
     					</div>
                </div>
     			</div>
 
             <div class="columns portfolio-item s-first">
                <div class="item-wrap">
-    				   <a href="portfolio.html">
-                     <img alt="" src="images/portfolio/camera-man.jpg">
+    				   <a href="">
+                     <img alt="" src="Categories/Health.jpg">
                      <div class="overlay"></div>
                      <div class="link-icon"><i class="fa fa-link"></i></div>
                   </a>
     					<div class="portfolio-item-meta">
-    					   <h5><a href="portfolio.html">Camera Man</a></h5>
-                     <p>Photography</p>
+    					   <h5><a href="">Health</a></h5>
     					</div>
                </div>
     			</div>
 
             <div class="columns portfolio-item">
                <div class="item-wrap">
-    				   <a href="portfolio.html">
-                     <img alt="" src="images/portfolio/into-the-light.jpg">
+    				   <a href="">
+                     <img alt="" src="Categories/jounalism.jpg">
                      <div class="overlay"></div>
                      <div class="link-icon"><i class="fa fa-link"></i></div>
                   </a>
     					<div class="portfolio-item-meta">
-    					   <h5><a href="portfolio.html">Into The Light</a></h5>
-                     <p>Branding</p>
+    					   <h5><a href="">Journalism</a></h5>
     					</div>
                </div>
     			</div>
 
              <div class="columns portfolio-item">
                <div class="item-wrap">
-    				   <a href="portfolio.html">
-                     <img alt="" src="images/portfolio/geometrics.jpg">
+    				   <a href="">
+                     <img alt="" src="Categories/education.jpg">
                      <div class="overlay"></div>
                      <div class="link-icon"><i class="fa fa-link"></i></div>
                   </a>
     					<div class="portfolio-item-meta">
-    					   <h5><a href="portfolio.html">Geometrics</a></h5>
-                     <p>Illustration</p>
+    					   <h5><a href="">Education</a></h5>
     					</div>
                </div>
     			</div>
 
             <div class="columns portfolio-item">
                <div class="item-wrap">
-    				   <a href="portfolio.html">
-                     <img alt="" src="images/portfolio/console.jpg">
+    				   <a href="">
+                     <img alt="" src="Categories/writing.jpg">
                      <div class="overlay"></div>
                      <div class="link-icon"><i class="fa fa-link"></i></div>
                   </a>
     					<div class="portfolio-item-meta">
-    					   <h5><a href="portfolio.html">Console</a></h5>
-                     <p>Web Development</p>
+    					   <h5><a href="">Writing</a></h5>
     					</div>
                </div>
     			</div>
 
             <div class="columns portfolio-item s-first">
                <div class="item-wrap">
-    				   <a href="portfolio.html">
-                     <img alt="" src="images/portfolio/camera-man.jpg">
+    				   <a href="">
+                     <img alt="" src="Categories/science.jpg">
                      <div class="overlay"></div>
                      <div class="link-icon"><i class="fa fa-link"></i></div>
                   </a>
     					<div class="portfolio-item-meta">
-    					   <h5><a href="portfolio.html">Camera Man</a></h5>
-                     <p>Photography</p>
+    					   <h5><a href="">Science</a></h5>
     					</div>
                </div>
     			</div>
 
             <div class="columns portfolio-item">
                <div class="item-wrap">
-    				   <a href="portfolio.html">
-                     <img alt="" src="images/portfolio/into-the-light.jpg">
+    				   <a href="">
+                     <img alt="" src="Categories/design.jpg">
                      <div class="overlay"></div>
                      <div class="link-icon"><i class="fa fa-link"></i></div>
                   </a>
     					<div class="portfolio-item-meta">
-    					   <h5><a href="portfolio.html">Into The Light</a></h5>
-                     <p>Branding</p>
+    					   <h5><a href="">Design</a></h5>
     					</div>
                </div>
     			</div>
@@ -375,13 +360,12 @@
 
       <div class="row">
 
-         <div class="eight columns offset-1">
+      <div class="eight columns offset-1">
 
-            <h1><a href="blog-single.html">Voluptate Velit Esse</a><a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">.</a></h1>
-            <p>Ducimus qui blanditiis praesentium voluptatum
-            deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate<!-- Simply type	the promocode in the box labeled “Promo Code” when placing your order. -->. </p>
+<h1><a href="blog-single.html">“The man who asks a question is a fool for a minute, the man who does not ask is a fool for life”</a><a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">.</a></h1>
+<p> – Confucius<!-- Simply type	the promocode in the box labeled “Promo Code” when placing your order. -->. </p>
 
-         </div>
+</div>
 
          <div class="three columns action">
 

@@ -120,7 +120,7 @@
       <div class="row">
 
          <div class="ten columns centered text-center">
-            <h1>Our Blog<span>.</span></h1>
+            <h1>Edit User<span>.</span></h1>
 
             <p>Aenean condimentum, lacus sit amet luctus lobortis, dolores et quas molestias excepturi
             enim tellus ultrices elit, amet consequat enim elit noneas sit amet luctu. </p>
@@ -138,12 +138,6 @@
     <section class="s-content s-content--narrow">
 
         <div class="row">
-
-            <div class="s-content__header col-full">
-                <h1 class="s-content__header-title">
-                    Edit My Deatils
-                </h1>
-            </div> <!-- end s-content__header -->
           
 
                 <form name="cForm" id="cForm" method="POST" action="UpdateUser" enctype="multipart/form-data">

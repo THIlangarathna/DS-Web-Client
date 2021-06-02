@@ -120,7 +120,7 @@
       <div class="row">
 
          <div class="ten columns centered text-center">
-            <h1>Our Blog<span>.</span></h1>
+            <h1>Ask Anything<span>.</span></h1>
 
             <p>Aenean condimentum, lacus sit amet luctus lobortis, dolores et quas molestias excepturi
             enim tellus ultrices elit, amet consequat enim elit noneas sit amet luctu. </p>
@@ -136,15 +136,6 @@
 
         <div class="row">
 
-            <div class="s-content__header col-full">
-                <h1 class="s-content__header-title">
-                    Create Questions.
-                </h1>
-            </div> <!-- end s-content__header -->
-    
-               
-          
-
             <form name="cForm" id="cForm" method="post" action="CreateQuestion" enctype="multipart/form-data">
                     <fieldset>
 
@@ -156,9 +147,14 @@
                         </div>
                         <div class="dropdown-menu">
                             <select  class="full-width" name="category">
-                                <option >Health</option>
-                                <option >Fitness</option>
-                                <option>IT</option>
+                            <option >Technology</option>
+                                <option >Nature</option>
+                                <option>Health</option>
+                                <option>Journalism</option>
+                                <option>Education</option>
+                                <option>Writing</option>
+                                <option>Science</option>
+                                <option>Design</option>
                                 
                               </select>
                        </div>

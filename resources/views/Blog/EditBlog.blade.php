@@ -82,20 +82,7 @@
                <li><a href="/CreateQuestion">Ask Questions</a></li>
             </ul>
          </li>
-         <li><span><a href="/categories">Categories</a></span>
-         <ul>
-               <li><a href="blog.html">Category 1</a></li>
-               <li><a href="blog.html">Category 2</a></li>
-               <li><a href="blog.html">Category 3</a></li>
-               <li><a href="blog.html">Category 4</a></li>
-               <li><a href="blog.html">Category 5</a></li>
-               <li><a href="blog.html">Category 6</a></li>
-               <li><a href="blog.html">Category 7</a></li>
-               <li><a href="blog.html">Category 8</a></li>
-            </ul>
-         </li>
          <li><a href="/aboutAuth">About</a></li>
-         <li><a href="/contactAuth">Contact</a></li>
          <li><span><a href="/MyDashboard">My Account</a></span>
                   <ul>
                         <li><a href="/MyDashboard">My Dashboard</a></li>
@@ -119,7 +106,7 @@
       <div class="row">
 
          <div class="ten columns centered text-center">
-            <h1>Our Blog<span>.</span></h1>
+            <h1>Edit Blog<span>.</span></h1>
 
             <p>Aenean condimentum, lacus sit amet luctus lobortis, dolores et quas molestias excepturi
             enim tellus ultrices elit, amet consequat enim elit noneas sit amet luctu. </p>
@@ -159,9 +146,14 @@
                         </div>
                         <div class="dropdown-menu">
                             <select  class="full-width" name="category" value="{{$response['blog']['category']}}">
-                                <option >Health</option>
-                                <option >IT</option>
-                                <option>Fitness</option>
+                              <option >Technology</option>
+                                <option >Nature</option>
+                                <option>Health</option>
+                                <option>Journalism</option>
+                                <option>Education</option>
+                                <option>Writing</option>
+                                <option>Science</option>
+                                <option>Design</option>
                                 
                               </select>
                        </div>
